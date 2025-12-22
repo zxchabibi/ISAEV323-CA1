@@ -1,18 +1,17 @@
-def search_and_replace():
-    text = input("Введите произвольный текст: ")
-    word = input("Введите слово для поиска: ")
-    count = text.lower().split().count(word.lower())  
-    try:
-        index = text.lower().split().index(word.lower())
-    except ValueError:
-        index = -1 
-    new_text = text.replace(word, "**")
-    print(f"Количество встреченных слов: {count}")
-    if index != -1:
-        print(f"Индекс первого встреченного слова: {index}")
+text = input("Введите произвольный текст: ")
+search_word = input("Введите слово для поиска: ")
+if not search_word:
+    print("Ошибка: слово для поиска не может быть пустым")
+else:
+    word_count = text.count(search_word)
+    first_index = text.find(search_word)
+    cleaned_text = text.replace(search_word, "")
+    print(f"\nРезультаты поиска слова '{search_word}':")
+    print(f"Количество встреченных слов: {word_count}")
+    if first_index >= 0:
+        print(f"Индекс первого встреченного слова: {first_index}")
     else:
-        print(f"Слово не найдено")
-    print(f"Текст без слова: {new_text}")
-
-search_and_replace()
-
+        print("Слово не найдено в тексте")
+    
+    print("\nТекст без введенного слова:")
+    print(cleaned_text)

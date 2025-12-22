@@ -1,10 +1,8 @@
-text = input("Введите произвольную строку: ")
-text = text.lower()
-char_counts = {}
-for char in text:
-    if char in char_counts:
-        char_counts[char] += 1
+text = input("Введите текст")
+char_count = {}
+for char in text.lower():
+    if char in char_count:
+        char_count[char] += 1
     else:
-        char_counts[char] = 1
-print("Вывод:")
-print(char_counts)
+        char_count[char] = 1
+print(char_count)

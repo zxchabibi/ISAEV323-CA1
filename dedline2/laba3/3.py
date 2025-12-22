@@ -1,13 +1,31 @@
-phone_book = {"Александр": "123-45-67", "Мария": "987-65-43", "Иван": "555-11-22", "Елена": "777-88-99"}
+phone_book = {'Мама': '123456', 'Папа': '654321', 'Друг': '111222'}
 while True:
-    print("\n1-Показать\n2-Добавить\n3-Удалить\n4-Выйти")
-    c = input("Действие: ")
-    if c == '1': print('\n'.join([f"Имя: {n}, Телефон: {p}" for n,p in phone_book.items()]) if phone_book else "Пусто.")
-    elif c == '2':
-        n = input("Имя: ")
-        print(f"'{n}' уже есть.") if n in phone_book else (phone_book.update({n: input("Телефон: ")}), print(f"'{n}' добавлен."))
-    elif c == '3':
-        n = input("Имя: ")
-        print(f"'{n}' удален." if phone_book.pop(n, None) else f"'{n}' не найден.")
-    elif c == '4': print("Выход."); exit()
-    else: print("Ошибка.")
+    print("\n1 - показать все контакты")
+    print("2 - добавить контакт") 
+    print("3 - удалить контакт")
+    print("4 - выйти")   
+    choice = input("Выбери действие: ")
+    if choice == '1':
+        print("\nТелефонная книга:")
+        for name, phone in phone_book.items():
+            print(f"{name}: {phone}")         
+    elif choice == '2':
+        name = input("Введи имя: ")
+        if name in phone_book:
+            print("Такой контакт уже есть!")
+        else:
+            phone = input("Введи телефон: ")
+            phone_book[name] = phone
+            print("Контакт добавлен!")         
+    elif choice == '3':
+        name = input("Введи имя для удаления: ")
+        if name in phone_book:
+            del phone_book[name]
+            print("Контакт удален!")
+        else:
+            print("Такого контакта нет!")  
+    elif choice == '4':
+        print("Пока!")
+        exit()
+    else:
+        print("Неправильный выбор!")

@@ -1,17 +1,17 @@
 students = [
-    ("Мария", 20, 4.8),
     ("Анна", 21, 4.5),
     ("Петр", 22, 4.2),
-    ("Иван", 19, 3.8),
-    ("Елена", 23, 4.9)
+    ("Мария", 19, 4.8),
+    ("Иван", 20, 4.1),
+    ("Ольга", 23, 4.3)
 ]
-
 print("Студенты старше 20 лет:")
-older_students = [f"- {n} ({a}), средний балл: {s}" for n, a, s in students if a > 20]
-print('\n'.join(older_students) if older_students else "Нет студентов старше 20 лет.")
-
-best_student = max(students, key=lambda s: s[2])
+for name, age, score in students:
+    if age > 20:
+        print(f"- {name} ({age}), средний балл: {score}")
+best_student = max(students, key=lambda x: x[2])
 print(f"\nЛучший студент: {best_student[0]}, средний балл: {best_student[2]}")
-
-print("\nОтсортированный список студентов по имени:")
-[print(f"- {n} (Возраст: {a}, Средний балл: {s})") for n, a, s in sorted(students, key=lambda s: s[0])]
+sorted_students = sorted(students, key=lambda x: x[0])
+print("\nОтсортированные студенты:")
+for name, age, score in sorted_students:
+    print(f"- {name} ({age}), средний балл: {score}")

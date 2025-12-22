@@ -1,7 +1,5 @@
-try:
-    num = int(input("Введите число: "))
-    print("Вывод:")
-    for i in range(1, 11):
-        print(f"{num} * {i} = {num * i}")
-except ValueError:
-    print("Ошибка: Введите целое число.")
+n = int(input("Введите число: "))
+print(f"Таблица умножения для числа {n}:")
+for i in range(1, 11):
+    result = n * i
+    print(f"{n} * {i} = {result}")

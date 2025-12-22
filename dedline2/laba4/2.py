@@ -1,10 +1,13 @@
-import random
+numbers = [15, 67, 42, 88, 31, 90, 23, 76, 55, 10]
+even_numbers = []
+for num in numbers:
+    if num % 2 == 0:
+        even_numbers.append(num)
 
-original_numbers = [random.randint(1, 100) for _ in range(10)]
-print(f"Исходный список: {original_numbers}")
-
-even_numbers = [num for num in original_numbers if num % 2 == 0]
+big_numbers = []
+for num in numbers:
+    if num > 50:
+        big_numbers.append(num)
+print(f"Все числа: {numbers}")
 print(f"Четные числа: {even_numbers}")
-
-greater_than_50 = [num for num in original_numbers if num > 50]
-print(f"Числа больше 50: {greater_than_50}")
+print(f"Числа больше 50: {big_numbers}")

@@ -1,10 +1,6 @@
-def step_text():
-  text = input("Введите произвольный текст: ")
-  try:
-    step = int(input("Введите шаг: "))
-  except ValueError:
-    print("Некорректный ввод. Шаг должен быть целым числом.")
-    return
-  new_text = text[::step]
-  print(new_text)
-step_text()
+text = input("Введите текст: ")
+step = int(input("Введите шаг: "))
+result = ""
+for i in range(0, len(text), step):
+    result += text[i]
+print(result)

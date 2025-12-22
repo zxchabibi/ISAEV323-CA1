@@ -1,9 +1,11 @@
-input_str = input("Введите три целых числа через пробел (пример 10 3 2): ")
-a, b, c, = map(int, input_str.split())
-print(f"{a} * {b} = {a*b}")
-print(f"{b} * {c} = {b*c}")
-print(f"{c} * {a} = {c*a}")
-print(f"{a} ** 4 = {a**4}")
-print(f"{b} % {c} = {b%c}")
-print(f"{c} // {a} = {c//a}")
-print(f"Сумма = {a**4 + b%c + c//a}")
+print("Введите три целых числа через пробел:")
+a, b, c = map(int, input().split())
+m1 = a*b
+m2 = b*c
+m3 = c*a
+Stepen = a ** 4
+Ostatokkkk = b % c
+целостное = c // a
+print ("Результаты умножений:" , m1, m2, m3)
+print ("Результаты дополнительных действий:" , Stepen, Ostatokkkk, целостное)
+print ("Результаты :" , Stepen + Ostatokkkk + целостное)

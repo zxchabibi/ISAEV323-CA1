@@ -4,12 +4,22 @@ products = {
     "Клавиатура": {"price": 2500, "sold": 30},
     "Монитор": {"price": 30000, "sold": 8}
 }
-
-best_selling_item_name = max(products, key=lambda item: products[item]['sold'])
-print(f"Самый продаваемый товар (по количеству): {best_selling_item_name}")
-
-total_revenue = sum(data['price'] * data['sold'] for data in products.values())
-print(f"Общая выручка магазина: {total_revenue} рублей")
-
-highest_revenue_item_name = max(products, key=lambda item: products[item]['price'] * products[item]['sold'])
-print(f"Товар, принесший наибольшую выручку: {highest_revenue_item_name}")
+max_sold = 0
+best_sold_name = ""
+for name, info in products.items():
+    if info["sold"] > max_sold:
+        max_sold = info["sold"]
+        best_sold_name = name
+print(f"Самый продаваемый: {best_sold_name}")
+total = 0
+for name, info in products.items():
+    total += info["price"] * info["sold"]
+print(f"Общая выручка: {total}")
+max_revenue = 0
+best_revenue_name = ""
+for name, info in products.items():
+    revenue = info["price"] * info["sold"]
+    if revenue > max_revenue:
+        max_revenue = revenue
+        best_revenue_name = name
+print(f"Самый прибыльный: {best_revenue_name}")
